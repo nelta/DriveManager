@@ -2,7 +2,7 @@
     <string name="app_name">Drive Manager</string>
     <string name="action_settings">Einstellungen</string>
     <string name="section_format">Hello World from section: %1$d</string>
-    <string name="title_activity_settings">Einstellungen</string>
+    <string name="title_activity_settings">App-Einstellungen</string>
 
     <!-- Strings related to Settings -->
 
@@ -75,5 +75,9 @@
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="title_activity_explorer">ExplorerActivity</string>
 
-    <string name="action_hdd_source">Festplattenverwaltung</string>
+    <string name="action_drive_administration">Festplattenverwaltung</string>
+    <string name="pref_browse_path_button_text">Suche</string>
+    <string name="settings_drive_administration">Einstellungen für die Festplattenverwaltung</string>
+    <string name="search_source">Verzeichnis durchsuchen</string>
+    <string name="chooser_title">Quelle wählen</string>
 </resources>

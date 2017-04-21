@@ -9,7 +9,7 @@
         app:showAsAction="never"/>
     <item
         android:id="@+id/action_path"
-        android:title="@string/action_hdd_source"
+        android:title="@string/action_drive_administration"
         app:showAsAction="never"
         android:orderInCategory="200"/>
 </menu>

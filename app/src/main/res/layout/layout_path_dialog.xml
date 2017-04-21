@@ -14,8 +14,9 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="match_parent"
+        android:text="@string/pref_browse_path_button_text"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/folder_search"
+        android:drawableStart="@drawable/ic_folder_open_black_24dp"
         android:background="@color/colorTransparent"/>
 </LinearLayout>

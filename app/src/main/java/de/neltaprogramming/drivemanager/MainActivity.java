@@ -1,22 +1,20 @@
 package de.neltaprogramming.drivemanager;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
@@ -60,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Synchronisierung...", 2500)
                         .setAction("Action", null).show();
-                Animation rotation = AnimationUtils.loadAnimation( fab.getContext(), R.anim.rotate_around_center_point);
+                Animation rotation = AnimationUtils.loadAnimation(fab.getContext(), R.anim.rotate_around_center_point);
                 fab.startAnimation(rotation);
             }
         });
@@ -83,11 +81,14 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            startActivity(new Intent(this, SettingsActivity.class));
-            return true;
+        switch (id) {
+            case R.id.action_settings:
+                startActivity(new Intent(this, SettingsAppActivity.class));
+                return true;
+            case R.id.action_path:
+                startActivity(new Intent(this, SettingsDriveAdministrationActivity.class));
+                break;
         }
-
         return super.onOptionsItemSelected(item);
     }
 

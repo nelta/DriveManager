@@ -24,11 +24,4 @@
         android:positiveButtonText="@null"
         android:title="@string/pref_title_add_friends_to_messages"/>
 
-    <EditTextPreference
-        android:title="@string/pref_title_path"
-        android:key="example_path"
-        android:defaultValue="@string/pref_default_path"
-        android:inputType="textUri"
-        android:dialogTitle="Pfad wählen"/>
-
 </PreferenceScreen>
