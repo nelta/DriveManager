@@ -24,6 +24,7 @@ public class SettingsDriveAdministrationActivity extends AppCompatActivity imple
     SharedPreferences sharedPreferences;
 
     private final String PATH_KEY = "drive_administration_path";
+    private EditText pathEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +32,7 @@ public class SettingsDriveAdministrationActivity extends AppCompatActivity imple
         setContentView(R.layout.activity_settings_drive_administration);
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        EditText pathEditText = (EditText) findViewById(R.id.path_drive_administration);
+        pathEditText = (EditText) findViewById(R.id.path_drive_administration);
         pathEditText.setText(sharedPreferences.getString(PATH_KEY, "/"));
         pathEditText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -45,7 +46,7 @@ public class SettingsDriveAdministrationActivity extends AppCompatActivity imple
             @Override
             public void afterTextChanged(Editable s) {
                 sharedPreferences.edit().putString("drive_administration_path", s.toString()).apply();
-
+                Log.e("TEST", "afterTextChanged");
             }
         });
 
@@ -97,6 +98,7 @@ public class SettingsDriveAdministrationActivity extends AppCompatActivity imple
                         try {
                             // Get the file path from the URI
                             final String path = FileUtils.getPath(this, uri);
+                            pathEditText.setText(uri.toString());
                             Toast.makeText(SettingsDriveAdministrationActivity.this,
                                     "File Selected: " + path, Toast.LENGTH_LONG).show();
                         } catch (Exception e) {
